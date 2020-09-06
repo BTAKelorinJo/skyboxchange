@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ChangeSkybox : MonoBehaviour
+
+{
+  //スカイボックスのマテリアルを複数登録する（必須）
+    public Material[] sky;
+
+//外から呼び出して、スカイボックスのマテリアルを番号で切り替える
+    public void ChangeSkyBox(int a)
+    {
+    //番号以外の数値だったらなにもせず帰る
+        if (a < 0 || a > sky.Length) { return; }
+        
+        RenderSettings.skybox = sky[a];
+    }
+
+
+}
